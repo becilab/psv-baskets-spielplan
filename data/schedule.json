@@ -1,13 +1,12 @@
 {
   "schema": 1,
   "season": "2026/27",
-  "updatedAt": "2026-10-23T12:20:26.935529+00:00",
+  "updatedAt": "2026-10-23T12:50:35.901952+00:00",
   "sources": [
     "https://www.basketball-bund.net/rest/team/id/163593/matches",
     "https://www.basketball-bund.net/rest/team/id/231444/matches",
     "https://www.basketball-bund.net/rest/team/id/231426/matches",
     "https://www.basketball-bund.net/rest/team/id/165755/matches",
-    "https://www.basketball-bund.net/rest/team/id/165756/matches",
     "https://www.basketball-bund.net/rest/team/id/165793/matches",
     "https://www.basketball-bund.net/rest/team/id/316511/matches",
     "https://www.basketball-bund.net/rest/team/id/165794/matches",
@@ -35,11 +34,6 @@
       "name": "U16 BYL",
       "id": 165755,
       "color": "#ffbd96"
-    },
-    {
-      "name": "U16 BL",
-      "id": 165756,
-      "color": "#ffc9ac"
     },
     {
       "name": "U14 LL",
@@ -73,25 +67,6 @@
     }
   ],
   "games": [
-    {
-      "id": 2926033,
-      "date": "2026-09-19",
-      "time": "13:30",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": false,
-      "homeTeam": "ESV Ingolstadt-Ringsee",
-      "awayTeam": "PSV Ingolstadt 2",
-      "venue": "Grundschule an der Münchenerstraße, Münchener Str. 65, 85051, Ingolstadt",
-      "score": "20:0",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926033/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
-    },
     {
       "id": 2925231,
       "date": "2026-10-03",
@@ -321,25 +296,6 @@
       "leagueId": 54507
     },
     {
-      "id": 2926016,
-      "date": "2026-10-11",
-      "time": "16:30",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": false,
-      "homeTeam": "VSC Baskets Donauwörth",
-      "awayTeam": "PSV Ingolstadt 2",
-      "venue": "Stauferpark Halle, Neudegger Allee 4, 86609, Donauwörth",
-      "score": "",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926016/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
-    },
-    {
       "id": 2925125,
       "date": "2026-10-17",
       "time": "12:00",
@@ -376,25 +332,6 @@
       "source": "https://www.basketball-bund.net/rest/match/id/2925243/matchInfo",
       "competition": "league",
       "leagueId": 54471
-    },
-    {
-      "id": 2926030,
-      "date": "2026-10-17",
-      "time": "12:30",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": true,
-      "homeTeam": "PSV Ingolstadt 2",
-      "awayTeam": "FC Gerolfing 1930 e.V.",
-      "venue": "August-Horch-Schule, Furtwänglerstr. 9, 85057, Ingolstadt",
-      "score": "",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926030/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
     },
     {
       "id": 2904418,
@@ -853,44 +790,6 @@
       "leagueId": 52531
     },
     {
-      "id": 2926045,
-      "date": "2026-11-15",
-      "time": "16:00",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": true,
-      "homeTeam": "PSV Ingolstadt 2",
-      "awayTeam": "TSV 1868 Aichach",
-      "venue": "August-Horch-Schule, Furtwänglerstr. 9, 85057, Ingolstadt",
-      "score": "",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926045/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
-    },
-    {
-      "id": 2926051,
-      "date": "2026-11-21",
-      "time": "10:00",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": false,
-      "homeTeam": "MTV Baskets Ingolstadt 2",
-      "awayTeam": "PSV Ingolstadt 2",
-      "venue": "MTV-Halle, Von-der-Tann-Str.2, 85049, Ingolstadt",
-      "score": "",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926051/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
-    },
-    {
       "id": 2924877,
       "date": "2026-11-21",
       "time": "14:30",
@@ -1233,25 +1132,6 @@
       "leagueId": 54471
     },
     {
-      "id": 2926063,
-      "date": "2026-12-05",
-      "time": "14:30",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": false,
-      "homeTeam": "TSV Etting-Ingolstadt",
-      "awayTeam": "PSV Ingolstadt 2",
-      "venue": "Ballspielhalle, Retzbachweg 10, 85055, Etting",
-      "score": "",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926063/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
-    },
-    {
       "id": 2844703,
       "date": "2026-12-05",
       "time": "17:30",
@@ -1402,25 +1282,6 @@
       "source": "https://www.basketball-bund.net/rest/match/id/2924644/matchInfo",
       "competition": "league",
       "leagueId": 54507
-    },
-    {
-      "id": 2926070,
-      "date": "2026-12-12",
-      "time": "17:30",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": true,
-      "homeTeam": "PSV Ingolstadt 2",
-      "awayTeam": "VSC Baskets Donauwörth",
-      "venue": "August-Horch-Schule, Furtwänglerstr. 9, 85057, Ingolstadt",
-      "score": "",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926070/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
     },
     {
       "id": 2844705,
@@ -1917,25 +1778,6 @@
       "leagueId": 54352
     },
     {
-      "id": 2926088,
-      "date": "2027-01-24",
-      "time": "14:45",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": true,
-      "homeTeam": "PSV Ingolstadt 2",
-      "awayTeam": "ESV Ingolstadt-Ringsee",
-      "venue": "August-Horch-Schule, Furtwänglerstr. 9, 85057, Ingolstadt",
-      "score": "",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926088/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
-    },
-    {
       "id": 2924649,
       "date": "2027-01-24",
       "time": "15:00",
@@ -2088,25 +1930,6 @@
       "leagueId": 54352
     },
     {
-      "id": 2926100,
-      "date": "2027-01-31",
-      "time": "14:45",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": false,
-      "homeTeam": "TSV 1868 Aichach",
-      "awayTeam": "PSV Ingolstadt 2",
-      "venue": "Volksschule Aichach-Nord, Mozartstr. 1, 86551, Aichach",
-      "score": "",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926100/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
-    },
-    {
       "id": 2904469,
       "date": "2027-01-31",
       "time": "15:00",
@@ -2200,25 +2023,6 @@
       "source": "https://www.basketball-bund.net/rest/match/id/2925165/matchInfo",
       "competition": "league",
       "leagueId": 54466
-    },
-    {
-      "id": 2926105,
-      "date": "2027-02-20",
-      "time": "12:30",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": true,
-      "homeTeam": "PSV Ingolstadt 2",
-      "awayTeam": "MTV Baskets Ingolstadt 2",
-      "venue": "August-Horch-Schule, Furtwänglerstr. 9, 85057, Ingolstadt",
-      "score": "",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926105/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
     },
     {
       "id": 2904479,
@@ -2485,25 +2289,6 @@
       "source": "https://www.basketball-bund.net/rest/match/id/2925171/matchInfo",
       "competition": "league",
       "leagueId": 54466
-    },
-    {
-      "id": 2926114,
-      "date": "2027-03-06",
-      "time": "17:30",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": true,
-      "homeTeam": "PSV Ingolstadt 2",
-      "awayTeam": "TSV Etting-Ingolstadt",
-      "venue": "August-Horch-Schule, Furtwänglerstr. 9, 85057, Ingolstadt",
-      "score": "",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926114/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
     },
     {
       "id": 2925307,
@@ -2789,25 +2574,6 @@
       "source": "https://www.basketball-bund.net/rest/match/id/2905103/matchInfo",
       "competition": "league",
       "leagueId": 54352
-    },
-    {
-      "id": 2926084,
-      "date": "2027-03-21",
-      "time": "13:30",
-      "team": "U16 BL",
-      "league": "Bezirksliga U16 männlich Nord 26/27",
-      "home": false,
-      "homeTeam": "FC Gerolfing 1930 e.V.",
-      "awayTeam": "PSV Ingolstadt 2",
-      "venue": "Sporthalle Gerolfing, Wolfsgartenstr. 1, 85049, Ingolstadt",
-      "score": "",
-      "confirmed": false,
-      "cancelled": false,
-      "forfeit": true,
-      "teamForfeit": true,
-      "source": "https://www.basketball-bund.net/rest/match/id/2926084/matchInfo",
-      "competition": "league",
-      "leagueId": 54488
     },
     {
       "id": 2844771,

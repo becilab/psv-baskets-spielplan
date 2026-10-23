@@ -42,7 +42,7 @@ async function load(){
   const next=await response.json();if(next.schema!==1||!Array.isArray(next.games)||!next.games.length||!Number.isFinite(Date.parse(next.updatedAt)))throw Error('Ungültige Daten');
   snapshot={...next,games:next.games.filter(g=>(g.competition||'league')==='league')};
   teams=next.teams?next.teams.map(t=>t.name):legacyTeams;
-  if(selected!==null){selected=new Set([...selected].filter(t=>teams.includes(t)));if(selected.size===teams.length)selected=null;}
+  if(selected!==null){selected=new Set([...selected].filter(t=>teams.includes(t)));if(selected.size===teams.length)selected=null;saveSelection();}
   createTeamOptions();
   $('updated').textContent='Letzte erfolgreiche DBB-Aktualisierung: '+new Date(snapshot.updatedAt).toLocaleString('de-DE',{timeZone:'Europe/Berlin',dateStyle:'medium',timeStyle:'short'})+' Uhr (Berlin)';
   $('sources').innerHTML=snapshot.sources.map((s,i)=>`<li><a href="${esc(s)}" target="_blank" rel="noopener">${esc(snapshot.teams?.[i]?.name||legacyTeams[i])} · DBB-Spielplan</a></li>`).join('');render();
