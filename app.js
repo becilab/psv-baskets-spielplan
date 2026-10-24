@@ -1,4 +1,5 @@
 'use strict';
+const APP_VERSION='weekend-2';
 const legacyTeams=['U10 BL','U12 BL','U12 BOL','U14 BOL'];
 let teams=[],selected=null,snapshot=null;
 try{const saved=JSON.parse(localStorage.getItem('psvTeamSelection')||'null');if(Array.isArray(saved)&&saved.every(t=>typeof t==='string'))selected=new Set(saved)}catch{}
@@ -77,10 +78,25 @@ $('team-options').onchange=()=>{
 $('teams-all').onclick=()=>{selected=null;saveSelection();render()};
 $('teams-none').onclick=()=>{selected=new Set();saveSelection();render()};
 $('reset').onclick=()=>{selected=null;$('where').value='all';$('period').value='all';saveSelection();render()};
-$('reload').onclick=load;
+$('reload').onclick=()=>{const url=new URL(location.href);url.searchParams.set('refresh',Date.now());location.replace(url.href)};
 $('export').onclick=()=>{if(!snapshot)return;const fields=['date','time','team','league','homeTeam','awayTeam','venue','score','cancelled','forfeit','competition'];const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"';const blob=new Blob(['\ufeff'+[fields.join(','),...snapshot.games.map(g=>fields.map(f=>q(g[f])).join(','))].join('\r\n')],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='PSV_Spielplan_2026_27.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
 render();load();
 
-// Refresh when an installed app returns to the foreground or from browser history.
-document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')load()});
-window.addEventListener('pageshow',event=>{if(event.persisted)load()});
+// A resumed Home Screen app must check program updates as well as schedule data.
+let checkingVersion=false;
+async function resumeApp(){
+ if(checkingVersion)return;
+ checkingVersion=true;
+ try{
+  const response=await fetch('./?app-version-check='+Date.now(),{cache:'no-store'});
+  if(response.ok){
+   const html=await response.text(),version=html.match(/name="psv-app-version" content="([^"]+)"/)?.[1];
+   if(version&&version!==APP_VERSION){
+    const url=new URL(location.href);url.searchParams.set('app-version',version);location.replace(url.href);return;
+   }
+  }
+ }catch{}finally{checkingVersion=false;}
+ await load();
+}
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')resumeApp()});
+window.addEventListener('pageshow',event=>{if(event.persisted)resumeApp()});
