@@ -4,6 +4,26 @@ let teams=[],selected=null,snapshot=null;
 try{const saved=JSON.parse(localStorage.getItem('psvTeamSelection')||'null');if(Array.isArray(saved)&&saved.every(t=>typeof t==='string'))selected=new Set(saved)}catch{}
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// Compare wall-clock values in Berlin, including daylight-saving changes.
+function berlinNow(now=new Date()){
+ const parts=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now);
+ const get=type=>parts.find(p=>p.type===type).value;
+ return {date:get('year')+'-'+get('month')+'-'+get('day'),time:get('hour')+':'+get('minute')};
+}
+function isPast(game,clock){return !!game.date&&(game.date<clock.date||(game.date===clock.date&&!!game.time&&game.time<clock.time));}
+function openingTarget(list,today){
+ const day=new Date(today+'T12:00:00Z'),weekday=day.getUTCDay();
+ const saturday=new Date(day);saturday.setUTCDate(day.getUTCDate()+(weekday===0?-1:(6-weekday+7)%7));
+ const sunday=new Date(saturday);sunday.setUTCDate(saturday.getUTCDate()+1);
+ const start=saturday.toISOString().slice(0,10),end=sunday.toISOString().slice(0,10);
+ const eligible=list.filter(g=>g.date&&!g.cancelled&&!g.forfeit);
+ return eligible.find(g=>g.date>=start&&g.date<=end)||eligible.find(g=>g.date>=today)||null;
+}
+function jumpToWeekend(){
+ if(!snapshot||$('period').value==='past')return;
+ const target=openingTarget(filtered(snapshot.games,berlinNow().date),berlinNow().date);
+ if(target)document.getElementById('match-'+target.id)?.scrollIntoView?.({block:'start',behavior:'instant'});
+}
 function filtered(games,today){return games.filter(x=>(selected===null||selected.has(x.team))&&($('where').value==='all'||(x.home?'home':'away')===$('where').value)&&(x.competition||'league')==='league'&&($('period').value==='all'||(x.date&&($('period').value==='upcoming'?x.date>=today:x.date<today))));}
 function saveSelection(){
  try{localStorage.setItem('psvTeamSelection',JSON.stringify(selected===null?null:[...selected]))}catch{}
@@ -23,7 +43,7 @@ function render(){
   input.closest('label').classList.toggle('selected',input.checked);
  });
  if(!snapshot)return;
- const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Berlin'}).format(new Date());
+ const clock=berlinNow(),today=clock.date;
  const list=filtered(snapshot.games,today);$('counter').textContent=list.length+(list.length===1?' Spiel':' Spiele');
  const forfeits=list.filter(g=>g.forfeit).length;
  $('forfeitNotice').textContent=forfeits?forfeits+' Einträge mit Spielverzicht (DBB) – diese Termine nicht als reguläre Spiele einplanen.':'';
@@ -32,7 +52,7 @@ function render(){
   const d=x.date?new Date(x.date+'T12:00:00'):null;
   const month=d?d.toLocaleDateString('de-DE',{month:'long',year:'numeric'}):'Termin offen';
   if(month!==prev){out+=`<h2 class="month">${esc(month)}</h2>`;prev=month;}
-  out+=`<article class="match ${x.cancelled?'cancelled':''} ${x.forfeit?'forfeit':''}"><div class="date">${d?esc(d.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit'})):'Offen'}<small>${d?esc(d.toLocaleDateString('de-DE',{weekday:'short'}))+' · ':''}${x.time?esc(x.time)+' Uhr':'Zeit offen'}</small></div><div><div class="teams"><span class="pill" style="background:${/^#[0-9a-f]{6}$/i.test(snapshot.teams?.find(t=>t.name===x.team)?.color||'')?snapshot.teams.find(t=>t.name===x.team).color:'#6ce0e5'}">${esc(x.team)}</span><span class="side">${x.home?'🏠 Heim':'🚌 Auswärts'}</span></div><div class="opponent">${esc(x.homeTeam)} <span class="side">vs.</span> ${esc(x.awayTeam)}</div><div class="side">${esc(x.league)}</div><div class="side">${esc(x.venue||'Spielort von DBB noch nicht angegeben')}</div>${x.forfeit?'<div class="status"><strong>Spielverzicht (DBB)</strong></div>':''}${x.cancelled?'<strong class="status">Abgesagt</strong>':''}${x.movedFrom?`<div class="status">Verlegt · zuvor ${esc(x.movedFrom.date||'offen')} ${esc(x.movedFrom.time||'')}</div>`:''}</div><div class="score">${esc(x.score)}${x.score&&!x.confirmed?'<div class="side">vorläufig</div>':''}</div></article>`;
+  out+=`<article id="match-${esc(x.id)}" class="match ${isPast(x,clock)?'past':''} ${x.cancelled?'cancelled':''} ${x.forfeit?'forfeit':''}"><div class="date">${d?esc(d.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit'})):'Offen'}<small>${d?esc(d.toLocaleDateString('de-DE',{weekday:'short'}))+' · ':''}${x.time?esc(x.time)+' Uhr':'Zeit offen'}</small></div><div><div class="teams"><span class="pill" style="background:${/^#[0-9a-f]{6}$/i.test(snapshot.teams?.find(t=>t.name===x.team)?.color||'')?snapshot.teams.find(t=>t.name===x.team).color:'#6ce0e5'}">${esc(x.team)}</span><span class="side">${x.home?'🏠 Heim':'🚌 Auswärts'}</span></div><div class="opponent">${esc(x.homeTeam)} <span class="side">vs.</span> ${esc(x.awayTeam)}</div><div class="side">${esc(x.league)}</div><div class="side">${esc(x.venue||'Spielort von DBB noch nicht angegeben')}</div>${x.forfeit?'<div class="status"><strong>Spielverzicht (DBB)</strong></div>':''}${x.cancelled?'<strong class="status">Abgesagt</strong>':''}${x.movedFrom?`<div class="status">Verlegt · zuvor ${esc(x.movedFrom.date||'offen')} ${esc(x.movedFrom.time||'')}</div>`:''}</div><div class="score">${esc(x.score)}${x.score&&!x.confirmed?'<div class="side">vorläufig</div>':''}</div></article>`;
  }
  $('schedule').innerHTML=out||(selected!==null&&selected.size===0?'<p class="empty">Keine Mannschaft ausgewählt. Öffne die Mannschaftsauswahl und wähle mindestens ein Team.</p>':'<p class="empty">Keine Ligaspiele für diese Filter gefunden.</p>');
 }
@@ -45,7 +65,7 @@ async function load(){
   if(selected!==null){selected=new Set([...selected].filter(t=>teams.includes(t)));if(selected.size===teams.length)selected=null;saveSelection();}
   createTeamOptions();
   $('updated').textContent='Letzte erfolgreiche DBB-Aktualisierung: '+new Date(snapshot.updatedAt).toLocaleString('de-DE',{timeZone:'Europe/Berlin',dateStyle:'medium',timeStyle:'short'})+' Uhr (Berlin)';
-  $('sources').innerHTML=snapshot.sources.map((s,i)=>`<li><a href="${esc(s)}" target="_blank" rel="noopener">${esc(snapshot.teams?.[i]?.name||legacyTeams[i])} · DBB-Spielplan</a></li>`).join('');render();
+  $('sources').innerHTML=snapshot.sources.map((s,i)=>`<li><a href="${esc(s)}" target="_blank" rel="noopener">${esc(snapshot.teams?.[i]?.name||legacyTeams[i])} · DBB-Spielplan</a></li>`).join('');render();jumpToWeekend();
  }catch(e){$('updated').textContent='Der veröffentlichte Spielplan konnte nicht geladen werden. Bitte mit Internetverbindung erneut versuchen.'+(snapshot?' Der zuletzt geladene Stand bleibt sichtbar.':'');}
 }
 for(const id of ['where','period'])$(id).onchange=render;
