@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "season": "2026/27",
-  "updatedAt": "2026-10-25T17:00:37.554172+00:00",
+  "updatedAt": "2026-10-26T17:00:53.784520+00:00",
   "sources": [
     "https://www.basketball-bund.net/rest/team/id/163593/matches",
     "https://www.basketball-bund.net/rest/team/id/231444/matches",
@@ -571,7 +571,7 @@
       "homeTeam": "TSV Etting-Ingolstadt 2",
       "awayTeam": "PSV Ingolstadt 2",
       "venue": "Ballspielhalle, Retzbachweg 10, 85055, Etting",
-      "score": "",
+      "score": "38:85",
       "confirmed": false,
       "cancelled": false,
       "forfeit": false,
