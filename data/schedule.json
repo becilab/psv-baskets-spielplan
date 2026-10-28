@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "season": "2026/27",
-  "updatedAt": "2026-10-27T17:00:36.907741+00:00",
+  "updatedAt": "2026-10-28T18:09:02.157367+00:00",
   "sources": [
     "https://www.basketball-bund.net/rest/team/id/163593/matches",
     "https://www.basketball-bund.net/rest/team/id/231444/matches",
@@ -534,7 +534,7 @@
       "awayTeam": "PSV Ingolstadt 2",
       "venue": "Ballspielhalle, Retzbachweg 10, 85055, Etting",
       "score": "24:106",
-      "confirmed": false,
+      "confirmed": true,
       "cancelled": false,
       "forfeit": false,
       "teamForfeit": false,
