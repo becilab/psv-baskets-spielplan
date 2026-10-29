@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "season": "2026/27",
-  "updatedAt": "2026-10-28T18:09:02.157367+00:00",
+  "updatedAt": "2026-10-29T18:07:18.508403+00:00",
   "sources": [
     "https://www.basketball-bund.net/rest/team/id/163593/matches",
     "https://www.basketball-bund.net/rest/team/id/231444/matches",
@@ -583,7 +583,7 @@
     {
       "id": 2904998,
       "date": "2026-10-31",
-      "time": "13:30",
+      "time": "13:00",
       "team": "U14 LL",
       "league": "Landesliga U14 männlich Nord",
       "home": false,
@@ -597,7 +597,11 @@
       "teamForfeit": false,
       "source": "https://www.basketball-bund.net/rest/match/id/2904998/matchInfo",
       "competition": "league",
-      "leagueId": 54352
+      "leagueId": 54352,
+      "movedFrom": {
+        "date": "2026-10-31",
+        "time": "13:30"
+      }
     },
     {
       "id": 2925126,
