@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "season": "2026/27",
-  "updatedAt": "2026-10-30T19:17:42.550887+00:00",
+  "updatedAt": "2026-10-31T17:00:38.201269+00:00",
   "sources": [
     "https://www.basketball-bund.net/rest/team/id/163593/matches",
     "https://www.basketball-bund.net/rest/team/id/231444/matches",
@@ -173,7 +173,7 @@
       "awayTeam": "PSV Baskets Ingolstadt",
       "venue": "Berufsschule VI, Haunstetter Str. 59, 86161, Augsburg",
       "score": "87:48",
-      "confirmed": false,
+      "confirmed": true,
       "cancelled": false,
       "forfeit": false,
       "teamForfeit": false,
@@ -230,7 +230,7 @@
       "awayTeam": "PSV Ingolstadt",
       "venue": "Nike-Zentrum , Frankfurter Str. 87, 97082, Würzburg",
       "score": "102:53",
-      "confirmed": false,
+      "confirmed": true,
       "cancelled": false,
       "forfeit": false,
       "teamForfeit": false,
@@ -590,7 +590,7 @@
       "homeTeam": "TG Veitshöchheim",
       "awayTeam": "PSV Ingolstadt",
       "venue": "Dreifachhalle Schulzentrum, Eichendorffstr. Ecke Humboldstr. , 97209, Veitshöchheim",
-      "score": "",
+      "score": "56:62",
       "confirmed": false,
       "cancelled": false,
       "forfeit": false,
@@ -2506,7 +2506,7 @@
     {
       "id": 2905087,
       "date": "2027-03-14",
-      "time": "15:30",
+      "time": "15:00",
       "team": "U14 LL",
       "league": "Landesliga U14 männlich Nord",
       "home": false,
@@ -2520,7 +2520,11 @@
       "teamForfeit": false,
       "source": "https://www.basketball-bund.net/rest/match/id/2905087/matchInfo",
       "competition": "league",
-      "leagueId": 54352
+      "leagueId": 54352,
+      "movedFrom": {
+        "date": "2027-03-14",
+        "time": "15:30"
+      }
     },
     {
       "id": 2925317,
