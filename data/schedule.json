@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "season": "2026/27",
-  "updatedAt": "2026-11-06T17:09:59.549553+00:00",
+  "updatedAt": "2026-11-07T17:04:52.969886+00:00",
   "sources": [
     "https://www.basketball-bund.net/rest/team/id/163593/matches",
     "https://www.basketball-bund.net/rest/team/id/231444/matches",
@@ -632,7 +632,7 @@
       "homeTeam": "PSV Ingolstadt",
       "awayTeam": "Aschaffenburg Baskets",
       "venue": "August-Horch-Schule, Furtwänglerstr. 9, 85057, Ingolstadt",
-      "score": "",
+      "score": "75:100",
       "confirmed": false,
       "cancelled": false,
       "forfeit": false,
