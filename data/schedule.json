@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "season": "2026/27",
-  "updatedAt": "2026-11-17T22:09:57.669791+00:00",
+  "updatedAt": "2026-11-18T21:26:51.032283+00:00",
   "sources": [
     "https://www.basketball-bund.net/rest/team/id/163593/matches",
     "https://www.basketball-bund.net/rest/team/id/231444/matches",
@@ -671,7 +671,7 @@
       "awayTeam": "ESV Ingolstadt-Ringsee",
       "venue": "August-Horch-Schule, Furtwänglerstr. 9, 85057, Ingolstadt",
       "score": "83:39",
-      "confirmed": false,
+      "confirmed": true,
       "cancelled": false,
       "forfeit": false,
       "teamForfeit": false,
@@ -747,7 +747,7 @@
       "awayTeam": "TSV Nördlingen",
       "venue": "August-Horch-Schule, Furtwänglerstr. 9, 85057, Ingolstadt",
       "score": "130:68",
-      "confirmed": false,
+      "confirmed": true,
       "cancelled": false,
       "forfeit": false,
       "teamForfeit": false,
