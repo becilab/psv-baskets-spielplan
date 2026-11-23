@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "season": "2026/27",
-  "updatedAt": "2026-11-22T17:03:57.724700+00:00",
+  "updatedAt": "2026-11-23T17:09:58.171838+00:00",
   "sources": [
     "https://www.basketball-bund.net/rest/team/id/163593/matches",
     "https://www.basketball-bund.net/rest/team/id/231444/matches",
@@ -936,8 +936,8 @@
       "homeTeam": "PSV Ingolstadt",
       "awayTeam": "TV 1881 Altdorf",
       "venue": "August-Horch-Schule, Furtwänglerstr. 9, 85057, Ingolstadt",
-      "score": "",
-      "confirmed": false,
+      "score": "87:96",
+      "confirmed": true,
       "cancelled": false,
       "forfeit": false,
       "teamForfeit": false,
