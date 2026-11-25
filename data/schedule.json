@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "season": "2026/27",
-  "updatedAt": "2026-11-24T17:27:25.030845+00:00",
+  "updatedAt": "2026-11-25T17:00:40.800406+00:00",
   "sources": [
     "https://www.basketball-bund.net/rest/team/id/163593/matches",
     "https://www.basketball-bund.net/rest/team/id/231444/matches",
@@ -880,7 +880,7 @@
       "awayTeam": "TV 1847 Augsburg",
       "venue": "August-Horch-Schule, Furtwänglerstr. 9, 85057, Ingolstadt",
       "score": "24:18",
-      "confirmed": false,
+      "confirmed": true,
       "cancelled": false,
       "forfeit": false,
       "teamForfeit": false,
