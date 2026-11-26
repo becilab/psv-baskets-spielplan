@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "season": "2026/27",
-  "updatedAt": "2026-11-25T17:00:40.800406+00:00",
+  "updatedAt": "2026-11-26T17:01:50.300908+00:00",
   "sources": [
     "https://www.basketball-bund.net/rest/team/id/163593/matches",
     "https://www.basketball-bund.net/rest/team/id/231444/matches",
@@ -861,7 +861,7 @@
       "awayTeam": "PSV Ingolstadt 2",
       "venue": "MTV-Halle, Von-der-Tann-Str.2, 85049, Ingolstadt",
       "score": "65:61",
-      "confirmed": false,
+      "confirmed": true,
       "cancelled": false,
       "forfeit": false,
       "teamForfeit": false,
